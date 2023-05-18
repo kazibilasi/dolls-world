@@ -19,7 +19,8 @@ const Navbar = () => {
                                 <li><Link to="/blogs">Blogs</Link></li>
                             </ul>
                         </div>
-                        <a className="btn bg-pink-600 border-none normal-case text-xl">daisyUI</a>
+                        <img className="h-[60px] w-[60px]" src="https://i.ebayimg.com/images/g/WXEAAOSw7Q1f66-h/s-l500.jpg" alt="" />
+                        <a className="btn bg-pink-600 border-none normal-case text-xl">Dolls World</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
