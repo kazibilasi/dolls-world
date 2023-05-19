@@ -1,11 +1,34 @@
+import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const AddAToy = () => {
+    const { user } = useContext(AuthContext)
+   
+    
+
+   
+    const addAToy = event => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const sellerName = form.sellerName.value;
+        const subCategory = form.subcategory.value;
+        const price = form.price.value;
+        const pictureUrl = form.pictureUrl.value;
+        const email = user?.email;
+        const rating =form.rating.value;
+        const availableQuantity = form.quantity.value;
+        const description = form.description.value;
+        console.log(name, email,sellerName,price,subCategory,pictureUrl,rating,availableQuantity,description)
+
+    }
     return (
         <div className="container mx-auto mt-10">
             <div className="card flex-shrink-0 w-3/4 mx-auto shadow-2xl bg-base-100">
                 <p className=" text-3xl font-medium text-center mt-5">Add A Toy</p>
-                <form className=" mx-auto">
+                <form onSubmit={addAToy} className=" mx-auto">
                     <div className="flex gap-10 mt-10 ">
                         <div>
                             <div className="mb-4">
@@ -15,7 +38,7 @@ const AddAToy = () => {
 
                             <div className="mb-4">
                                 <label htmlFor="name" className="block">Name:</label>
-                                <input type="text" id="name" name="name" required className="w-full border border-gray-300 rounded-md py-2 px-3" />
+                                <input type="text" id="name" name="name" defaultValue={user?.displayName} required className="w-full border border-gray-300 rounded-md py-2 px-3" />
                             </div>
 
                             <div className="mb-4">
@@ -25,7 +48,7 @@ const AddAToy = () => {
 
                             <div className="mb-4">
                                 <label htmlFor="sellerEmail" className="block">Seller Email:</label>
-                                <input type="email" id="sellerEmail" name="sellerEmail" required className="w-full border border-gray-300 rounded-md py-2 px-3" />
+                                <input type="email" id="sellerEmail" defaultValue={user?.email} name="sellerEmail" required className="w-full border border-gray-300 rounded-md py-2 px-3" />
                             </div>
                         </div>
 

@@ -48,7 +48,7 @@ const AllToys = () => {
 
                                     {
                                         dollsData.map(dollData => <AllToysInformation
-                                            key={dollData}
+                                            key={dollData._id}
                                             dollData={dollData}
 
                                         ></AllToysInformation>)
