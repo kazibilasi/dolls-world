@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import login from "../../assets/photo/login.png"
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { ImGoogle, ImGithub } from "react-icons/im";
+import { ImGoogle,  } from "react-icons/im";
 
 
 const Login = () => {

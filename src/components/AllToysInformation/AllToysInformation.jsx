@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const AllToysInformation = ({dollData}) => {
 
     const {seller, price, toy_name, sub_category,
-        available_quantity } = dollData;
+        available_quantity , _id} = dollData;
     return (
        
             <tbody className="bg-white divide-y  divide-gray-200">
@@ -28,9 +29,9 @@ const AllToysInformation = ({dollData}) => {
                         <div className="text-sm text-gray-900">{available_quantity}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                        <button className="bg-pink-600 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
-                            View
-                        </button>
+                        <Link to= {`/toyDetails/${_id}`} className="bg-pink-600 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
+                           view
+                        </Link>
                     </td>
                 </tr>
 

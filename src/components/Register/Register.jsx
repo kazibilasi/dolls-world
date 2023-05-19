@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import login from "../../assets/photo/login.png"
 import React, { useContext } from 'react';
 
