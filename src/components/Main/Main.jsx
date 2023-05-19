@@ -3,11 +3,13 @@ import Navbar from "../Navbar/Navbar";
 
 
 
+
 const Main = () => {
     return (
         <div className=" top-10">
             <Navbar></Navbar>
             <Outlet></Outlet>
+
            
         </div>
     );

@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import login from "../../assets/photo/login.png"
+import React, { useContext } from 'react';
+
+import { ImGoogle} from "react-icons/im";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 
 const Register = () => {
+
+    const { user, createUser,logOut,  signInWithGoogle } = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -11,6 +18,29 @@ const Register = () => {
         const password = form.password.value;
         const photoURL = form.text.value;
         console.log(email, password,name,photoURL)
+
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                form.reset();
+                logOut,
+               window.location.href= ('/login')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    const handleGoogleRegister = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -34,13 +64,13 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered" required/>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -57,6 +87,7 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn bg-pink-600 border-none">Login</button>
                             </div>
+                            <button onClick={handleGoogleRegister} className='btn btn-outline mt-3 w-full'><span className='mr-3'><ImGoogle></ImGoogle></span>Sign in with Google</button>
                             <p>Already have an account? <Link to="/login" className=" text-red-800" >Please Login.</Link></p>
                         </div>
                     </form>

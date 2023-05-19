@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lustria&family=Open+Sans&family=Playfair+Display&family=Roboto&family=Work+Sans&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lustria', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
