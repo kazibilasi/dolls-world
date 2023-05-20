@@ -1,15 +1,36 @@
-
+import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="container mx-auto ">
-            <div className="card w-full h-[600px] image-full">
-                <figure><img className="w-full mx-auto" src="https://s2.r29static.com/bin/entry/7e9/0,0,2000,1050/x,80/1650396/image.jpg" alt="Shoes" /></figure>
-                <div className="card-body mx-auto my-auto ">
-                    <h2 className="card-title text-center text-4xl font-medium ">Welcome to Dolls World</h2>
-                    <p className=" text-center text-xl font-normal">Step into a World of Magic and Imagination with Our Exquisite Doll Collection! <br />
-                    Immerse yourself in the enchanting world of dolls, where dreams come to life. From whimsical fairies to elegant princesses, our collection offers a wide array of captivating characters.</p>
-                   
+        <div className='container mx-auto'>
+            <div className="carousel h-[600px] rounded-md w-full">
+                <div id="slide1" className="carousel-item relative w-full">
+                    <img src="https://img.freepik.com/free-photo/fluffy-toy-texture-close-up_23-2149686884.jpg?size=626&ext=jpg&ga=GA1.1.1570833622.1680187286&semt=ais" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" className="carousel-item relative w-full">
+                    <img src="https://img.freepik.com/free-photo/group-stuffed-animals-are-lined-up-frame_1340-36077.jpg?size=626&ext=jpg&ga=GA1.2.1570833622.1680187286&semt=ais" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" className="carousel-item relative w-full">
+                    <img src="https://img.freepik.com/free-photo/flat-lay-composition-toys-with-copyspace_23-2148144822.jpg?size=626&ext=jpg&ga=GA1.1.1570833622.1680187286&semt=ais" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" className="carousel-item relative w-full">
+                    <img src="https://img.freepik.com/free-photo/cute-plush-toys-arrangement_23-2150312314.jpg?size=626&ext=jpg&ga=GA1.1.1570833622.1680187286&semt=ais" className="w-full" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    </div>
                 </div>
             </div>
         </div>

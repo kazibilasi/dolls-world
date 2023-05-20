@@ -31,6 +31,8 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             form.reset();
+            logOut,
+            window.location.href= ('/')
         })
         .catch(error => {
             console.log(error)

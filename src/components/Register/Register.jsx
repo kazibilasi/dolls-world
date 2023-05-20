@@ -25,7 +25,7 @@ const Register = () => {
                 console.log(loggedUser)
                 form.reset();
                 logOut,
-               window.location.href= ('/login')
+               window.location.href= ('/')
             })
             .catch(error => {
                 console.log(error)
@@ -85,7 +85,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-pink-600 border-none">Login</button>
+                                <button className="btn bg-pink-600 border-none">Register</button>
                             </div>
                             <button onClick={handleGoogleRegister} className='btn btn-outline mt-3 w-full'><span className='mr-3'><ImGoogle></ImGoogle></span>Sign in with Google</button>
                             <p>Already have an account? <Link to="/login" className=" text-red-800" >Please Login.</Link></p>

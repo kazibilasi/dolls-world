@@ -39,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: "/AddAToy",
         element: <AddAToy></AddAToy>,
-       
-
-       
-       
       },
       {
         path: "/blogs",

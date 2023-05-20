@@ -5,12 +5,12 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
 
-    const {user, logOut} = useContext (AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
         <div className="top-8">
@@ -36,18 +36,21 @@ const Navbar = () => {
                         <ul className="menu menu-horizontal px-1">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/AllToys">All Toys</Link></li>
+
                             <li><Link to="/MyToys">My Toys</Link></li>
+
                             <li><Link to="/AddAToy">Add A Toy</Link></li>
                             <li><Link to="/blogs">Blogs</Link></li>
                         </ul>
                     </div>
                     <div className="navbar-end">
-                    {
-                        user? <>
-                        <button onClick={handleLogOut}className='btn bg-pink-600 border-none'>Sign Out</button>
-                        
-                        </>: <Link to = "/login" className="btn bg-pink-600 border-none text-xl">Log In</Link >
-                    }
+                        {
+                            user?.email ? <>
+
+                                <button onClick={handleLogOut} className='btn bg-pink-600 border-none'>Sign Out</button>
+
+                            </> : <Link to="/login" className="btn bg-pink-600 border-none text-xl">Log In</Link >
+                        }
                     </div>
                 </div>
             </div>

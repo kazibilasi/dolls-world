@@ -6,10 +6,6 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const AddAToy = () => {
     const { user } = useContext(AuthContext)
    
-    
-    
-
-   
     const addAToy = event => {
         event.preventDefault()
         const form = event.target;
@@ -23,6 +19,34 @@ const AddAToy = () => {
         const availableQuantity = form.quantity.value;
         const description = form.description.value;
         console.log(name, email,sellerName,price,subCategory,pictureUrl,rating,availableQuantity,description)
+
+        const order = {
+            name,
+            sellerName,
+            subCategory,
+            price,
+            pictureUrl,
+            email,
+            rating,
+            availableQuantity,
+            description
+        }
+
+        fetch('http://localhost:5000/addingToys',{
+            method :"POST",
+            headers :{
+                    'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                alert('added successfully')
+            }
+        })
 
     }
     return (
